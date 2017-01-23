@@ -420,7 +420,7 @@ function load() {
             energyLevel(energ);
 
             //nível do soro
-            let hi = 42 - Math.floor((41*hidratacao)/100);
+            let hi = 42 - Math.floor((42*hidratacao)/100);
 
             serumLevel(hi);
 
@@ -430,9 +430,10 @@ function load() {
                 death = true;
 
             }
-            if (hidratacao <= 0) {
+            //Hidratação não mata mais, apenas bloqueia o defib.
+            /*if (hidratacao <= 0) {
                 death = true;
-            }
+            }*/
             if (death == true) {
 
                 heart.pumping = false;
@@ -470,20 +471,22 @@ function load() {
 
                     //tecla A
                 } else if (event.keyCode == keyLeft && death == false) {
-                    energyPulse();
-                    setTimeout(function () {
-                      if (energia >= 100) {
-                          energia -= 100;
-                          if (bpm < 60) {
-                              bpm += bpm * 20 / 100 + 10;
-                          } else {
-                              bpm +=  bpm * 20 / 100;
-                          }
-                          hidratacao -= 10;
-                          update();
-                      }
+                    if (energia >= 100 && hidratacao >= 10) {
+                        energyPulse();
+                        setTimeout(function () {
+                        
+                            energia -= 100;
+                            if (bpm < 60) {
+                                bpm += bpm * 35 / 100 + 25;
+                            } else {
+                                bpm +=  bpm * 30 / 100;
+                            }
+                            hidratacao -= 10;
+                            update();
+                        
 
-                    }, 800);
+                        }, 800);
+                    }
 
                 } else if (event.keyCode == keyRight && death == false) {
                     if (energia >= 400) {
@@ -545,7 +548,7 @@ function load() {
             }
 
 
-        }, 20000 / bpm);
+        }, 30000 / bpm);
 
 
 
