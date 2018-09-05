@@ -1,0 +1,100 @@
+* {
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    color: #638099;
+    font-weight: 300;
+}
+
+/*Flexbox*/
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.box {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+    min-width: 300px;
+}
+
+.box-3 {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 3;
+    max-width: 100%;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.self-right {
+    align-self: right;
+}
+
+.full-width {
+    flex-basis: 100%;
+}
+
+/*Text*/
+
+
+.text-right {
+    text-align: right;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-darker {
+    color: yellow !important;
+}
+
+.text-thin {
+    font-weight: 100;
+}
+
+/*Images*/
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Specific*/
+
+.title-top {
+    margin-top: 20px;
+    min-width: 200px;
+}
+
+.title-super {
+    font-size: 60px;
+}
+
+.portfolio-image {
+    width: 300px;
+    height: 200px;
+}
